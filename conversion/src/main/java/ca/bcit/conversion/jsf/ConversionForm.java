@@ -1,11 +1,14 @@
 package ca.bcit.conversion.jsf;
 
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
+import java.io.Serializable;
 
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
+
+@SuppressWarnings("serial")
 @ManagedBean(name = "form")
-@RequestScoped
-public class ConversionForm {
+@SessionScoped
+public class ConversionForm implements Serializable {
 	private double number;
 	private double result;
 	
