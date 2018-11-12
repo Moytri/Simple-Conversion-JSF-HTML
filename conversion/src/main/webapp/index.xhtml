@@ -4,11 +4,18 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html">
    <h:head>
-      <title></title>
+      <title>Number Conversion</title>
    </h:head>
    <h:body>
       <h:form>
-		Hello
+		<h:outputText value="#{msgs.greeting}"/>
+		<h:panelGrid columns="3">
+			#{msgs.textLable}: 
+            <h:inputText id="number" value="#{form.number}" required="true"
+                      label="#{msgs.textLable}" />
+            <h:message for="number" errorClass="errors"/>
+		</h:panelGrid>
+		<h:commandButton value="#{msgs.submitPrompt}"/>
       </h:form>
    </h:body>
 </html>
