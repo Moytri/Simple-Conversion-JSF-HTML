@@ -1,0 +1,50 @@
+.evenColumns {
+   font-style: italic;		
+}
+
+.oddColumns {
+   padding-left: 1em;
+}
+
+.body {
+   background: #eee;
+}
+.instructions {
+	font-style: italic;
+	font-size: 1.2em;
+}
+.imageButton {
+	margin: 10px;
+	border-left: thin solid darkGray;
+	border-bottom: thin solid darkGray;
+	border-top: thin solid lightGray;
+	border-right: thin solid lightGray;
+}
+.presidentPageTitle {
+   vertical-align: top;
+   text-align: middle;
+   font-style: italic;
+   font-size: 2em;
+}
+.presidentDiscussion {
+   vertical-align: top;
+   text-align: left;
+   font-size: 1em;
+}
+
+.leftImage {
+   float: left;
+   margin-right: 1em;
+}
+
+.backLink {
+	font-style: italic;
+}
+
+.errors {
+   font-style: italic;
+   color: red;
+}
+.emphasis {
+   font-size: 1.3em;
+}
