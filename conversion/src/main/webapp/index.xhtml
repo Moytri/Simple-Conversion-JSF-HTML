@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"  
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core" 
       xmlns:h="http://java.sun.com/jsf/html">
    <h:head>
       <title>Number Conversion</title>
+      <h:outputStylesheet library="css" name="styles.css"/>
    </h:head>
    <h:body>
       <h:form>
@@ -14,8 +16,17 @@
             <h:inputText id="number" value="#{form.number}" required="true"
                       label="#{msgs.textLable}" />
             <h:message for="number" errorClass="errors"/>
+            #{msgs.radioLable}:
+            <h:selectOneRadio id="formulae" value="#{form.formulae}" required="true"
+                              selectedClass="selected" layout="pageDirection">
+               <f:selectItems value="#{form.formulaeItems}"/>
+            </h:selectOneRadio>
+            <h:message for="formulae" errorClass="errors"/>
 		</h:panelGrid>
-		<h:commandButton value="#{msgs.submitPrompt}"/>
+		<h:commandButton value="#{msgs.submitPrompt}" action="#{form.convert}"/>
       </h:form>
+		<h:outputLabel rendered="#{form.status == 'success'}" >           
+		     <h4 style="color:green">#{form.result} #{form.formulae}</h4>
+		</h:outputLabel>
    </h:body>
 </html>
