@@ -7,26 +7,36 @@
    <h:head>
       <title>Number Conversion</title>
       <h:outputStylesheet library="css" name="styles.css"/>
+      <h:outputStylesheet library="css" name="mainstyle.css"/>  
+         
    </h:head>
+   
    <h:body>
-      <h:form>
-		<h:outputText value="#{msgs.greeting}"/>
-		<h:panelGrid columns="3">
-			#{msgs.textLable}: 
-            <h:inputText id="number" value="#{form.number}" required="true"
-                      label="#{msgs.textLable}" />
-            <h:message for="number" errorClass="errors"/>
-            #{msgs.radioLable}:
-            <h:selectOneRadio id="formulae" value="#{form.formulae}" required="true"
-                              selectedClass="selected" layout="pageDirection">
-               <f:selectItems value="#{form.formulaeItems}"/>
-            </h:selectOneRadio>
-            <h:message for="formulae" errorClass="errors"/>
-		</h:panelGrid>
-		<h:commandButton value="#{msgs.submitPrompt}" action="#{form.convert}"/>
-      </h:form>
-		<h:outputLabel rendered="#{form.status == 'success'}" >           
-		     <h4 style="color:green">#{form.result} #{form.formulae}</h4>
-		</h:outputLabel>
+      <div id="header"> 
+		<h1>#{msgs.course}</h1>
+		<h2>#{msgs.name}</h2>
+	  </div>
+	  <div id="mainDoc">
+	      <h:form>
+			<strong><h:outputText value="#{msgs.greeting}"/></strong><br></br>
+			<br></br>
+			<h:panelGrid columns="3">			
+				#{msgs.textLable}: 
+	            <h:inputText id="number" value="#{form.number}" required="true"
+	                      label="#{msgs.textLable}" />
+	            <h:message for="number" errorClass="errors"/>
+	            #{msgs.radioLable}:
+	            <h:selectOneRadio id="formulae" value="#{form.formulae}" required="true"
+	                              selectedClass="selected" layout="pageDirection">
+	               <f:selectItems value="#{form.formulaeItems}"/>
+	            </h:selectOneRadio>
+	            <h:message for="formulae" errorClass="errors"/>
+			</h:panelGrid>
+			<h:commandButton value="#{msgs.submitPrompt}" action="#{form.convert}"/>
+	      </h:form>
+			<h:outputLabel rendered="#{form.status == 'success'}" >           
+			     <h4 style="color:green">#{form.result} #{form.formulae}</h4>
+			</h:outputLabel>
+		</div>
    </h:body>
 </html>
