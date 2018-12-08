@@ -70,7 +70,6 @@ public class ConversionForm implements Serializable {
 			}
 			status = "success";
 		}
-		/*<h:outputText value="#{form.status == 'success' ? form.result : ' '}" style="color:green"/>*/
 	}
 		
 }
